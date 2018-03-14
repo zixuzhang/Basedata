@@ -1,3 +1,4 @@
+#coding=utf-8
 from app import db
 from datetime import datetime
 from datetime import date
@@ -6,7 +7,7 @@ class UploadHistory(db.Document):
     '''
     上传历史记录
     '''
-    upload_date = db.DatetimeField(default=date.today)
+    upload_date = db.DateTimeField(default=date.today)
     # date = db.DatetimeField(default=datetime.now)
     patent_count = db.IntField(default=0)
     cnki_count = db.IntField(default=0)

@@ -13,7 +13,8 @@ def test():
     return 'hello'
     
 @main.route('/upload',methods=['GET','POST'])
-def upload():pandas 计算行数
+def upload():
+    #pandas 计算行数
     type = request.args.get('type')
     file = request.files.get('file')
     upload_file_type = config.UPLOAD_FILE_TYPE
@@ -61,5 +62,5 @@ def upload_history():
     upload_history = [i.to_dict() for i in upload_history]
     total = pydb['base'].find()
     data = dict(totla=total,history=upload_history)
-    return jsonify({'code':0,'msg':'','data':data)
+    return jsonify({'code':0,'msg':'','data':data})
 
